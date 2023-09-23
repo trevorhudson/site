@@ -10,12 +10,12 @@ html {
     font-weight: 300;
     color: var(--color)
     }
-    
+
     body {
         background-color: var(--background-color-light);
         color: var(--text-color-light);
     }
-    
+
     .dark-mode {
         background-color: var(--background-color-dark);
         color: var(--text-color-dark);
@@ -26,7 +26,7 @@ a {
     color: #1565c0;
 }
 
-a:hover {
+i:hover {
     color: #217ee7;
 }
 
