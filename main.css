@@ -1,7 +1,24 @@
+:root {
+    --background-color-light: white;
+    --text-color-light: black;
+    --background-color-dark: black;
+    --text-color-dark: white;
+}
 html {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: larger;
     font-weight: 300;
+    color: var(--color)
+    }
+    
+    body {
+        background-color: var(--background-color-light);
+        color: var(--text-color-light);
+    }
+    
+    .dark-mode {
+        background-color: var(--background-color-dark);
+        color: var(--text-color-dark);
 }
 
 a {
@@ -22,9 +39,9 @@ h1 {
 }
 
 #inner {
-    border-top: 1px solid lightgrey;
-    border-bottom: 1px solid lightgrey;
-    padding: .5rem 2rem;
+    border-top: thin solid;
+        border-bottom: thin solid;
+        padding: .5rem 2.25rem;
 }
 
 p {
@@ -34,12 +51,13 @@ p {
     letter-spacing: 0.1rem;
     margin: 0 0 2rem 0;
 }
+
 #content {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%) ;
+    transform: translate(-50%, -50%);
     text-align: center;
     max-width: 520px;
     padding: 32px;
@@ -68,9 +86,19 @@ p {
 }
 
 .icons a {
-    color: black;
+    color: inherit
 }
+
 
 .icons a:hover {
     color: #1565c0;
+}
+
+#dark-mode-toggle {
+    position: fixed;
+    right: 0rem;
+    margin: .25rem;
+    border: none;
+    color: inherit;
+    background-color: inherit;
 }
