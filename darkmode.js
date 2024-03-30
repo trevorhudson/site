@@ -1,26 +1,26 @@
-const darkModeToggle = document.getElementById('dark-mode-toggle');
+const darkModeToggle = document.getElementById("dark-mode-toggle");
 const body = document.body;
-let darkModeMediaQuery; // Declare the variable outside of the function
+let darkModeMediaQuery;
 
 // Function to toggle dark mode
 function toggleDarkMode() {
-  body.classList.toggle('dark-mode');
+	body.classList.toggle("dark-mode");
 }
 
 // Function to set dark mode based on user preference
 function setDarkMode() {
-  darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)'); // Assign the variable here
+	darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-  if (darkModeMediaQuery.matches) {
-    body.classList.add('dark-mode');
-  } else {
-    body.classList.remove('dark-mode');
-  }
+	if (darkModeMediaQuery.matches) {
+		body.classList.add("dark-mode");
+	} else {
+		body.classList.remove("dark-mode");
+	}
 }
 
-setDarkMode(); // Set initial mode
+setDarkMode();
 
-darkModeMediaQuery.addEventListener('change', setDarkMode);
+darkModeMediaQuery.addEventListener("change", setDarkMode);
 
 // Add event listener to the toggle button
-darkModeToggle.addEventListener('click', toggleDarkMode);
+darkModeToggle.addEventListener("click", toggleDarkMode);
