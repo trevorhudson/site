@@ -15,9 +15,11 @@ html {
 body {
     background-color: var(--background-color-light);
     color: var(--text-color-light);
+    transition: background-color 2s ease, color .5s ease;
 }
 
 .dark-mode {
+    transition: background-color 2s ease, color .5s ease;
     background-color: var(--background-color-dark);
     color: var(--text-color-dark);
 }
