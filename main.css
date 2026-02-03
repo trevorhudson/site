@@ -4,21 +4,24 @@
     --background-color-dark: black;
     --text-color-dark: white;
 }
+
 html {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: larger;
     font-weight: 300;
     color: var(--color)
-    }
+}
 
-    body {
-        background-color: var(--background-color-light);
-        color: var(--text-color-light);
-    }
+body {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+    transition: background-color 2s ease, color .5s ease;
+}
 
-    .dark-mode {
-        background-color: var(--background-color-dark);
-        color: var(--text-color-dark);
+.dark-mode {
+    transition: background-color 2s ease, color .5s ease;
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
 }
 
 a {
@@ -31,25 +34,14 @@ i:hover {
 }
 
 h1 {
-    font-size: 1.75rem;
-    line-height: 1.3;
-    letter-spacing: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-}
-
-#inner {
-    border-top: thin solid;
-        border-bottom: thin solid;
-        padding: .5rem 2.25rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.25rem;
 }
 
 p {
     font-size: .75rem;
-    line-height: 1;
-    /* text-transform: uppercase; */
-    letter-spacing: 0.1rem;
-    margin: 0 0 2rem 0;
+    letter-spacing: 0.15rem;
 }
 
 #content {
@@ -67,6 +59,12 @@ p {
 .avatar {
     border-radius: 50%;
     width: 150px;
+}
+
+#inner {
+    border-top: thin solid;
+    border-bottom: thin solid;
+    padding: .5rem 2.25rem;
 }
 
 .icons {
@@ -88,7 +86,6 @@ p {
 .icons a {
     color: inherit
 }
-
 
 .icons a:hover {
     color: #1565c0;
