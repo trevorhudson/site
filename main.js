@@ -7,12 +7,16 @@ function applyTheme(theme) {
   root.dataset.theme = theme;
 }
 
-function toggleTheme() {
-  const next = root.dataset.theme === "dark" ? "light" : "dark";
-  applyTheme(next);
+// The rotation, in order. Must mirror the [data-theme="…"] blocks in main.css.
+// (Read straight from CSS instead, and file:// blocks cssRules as cross-origin.)
+const themes = ["light", "dark", "sepia", "slate", "forest"];
+
+function cycleTheme() {
+  const current = themes.indexOf(root.dataset.theme);
+  applyTheme(themes[(current + 1) % themes.length]);
 }
 
-themeToggle.addEventListener("click", toggleTheme);
+themeToggle.addEventListener("click", cycleTheme);
 
 /* ---- Email copy ---- */
 const emailButton = document.getElementById("email-copy");

@@ -2,6 +2,9 @@
     --margin: 2.75rem;
 }
 
+/* Each theme is a monochromatic two-tone palette (background + one ink).
+   To add one to the rotation, just add a block here — the toggle discovers
+   it automatically. Rotation order follows the order written below. */
 :root[data-theme="light"] {
     --bg: #ffffff;
     --text: #111111;
@@ -12,6 +15,24 @@
     --bg: #0a0a0a;
     --text: #e8e8e8;
     --muted: #e8e8e8;
+}
+
+:root[data-theme="sepia"] {
+    --bg: #f3ead6;
+    --text: #4a3a28;
+    --muted: #4a3a28;
+}
+
+:root[data-theme="slate"] {
+    --bg: #1c2530;
+    --text: #b8c4d0;
+    --muted: #b8c4d0;
+}
+
+:root[data-theme="forest"] {
+    --bg: #0f1a12;
+    --text: #9ecfa8;
+    --muted: #9ecfa8;
 }
 
 * {
