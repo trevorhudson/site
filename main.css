@@ -1,101 +1,110 @@
 :root {
-    --background-color-light: white;
-    --text-color-light: black;
-    --background-color-dark: black;
-    --text-color-dark: white;
+    --margin: 2.75rem;
+}
+
+:root[data-theme="light"] {
+    --bg: #ffffff;
+    --text: #111111;
+    --muted: #111111;
+}
+
+:root[data-theme="dark"] {
+    --bg: #0a0a0a;
+    --text: #e8e8e8;
+    --muted: #e8e8e8;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 html {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: larger;
-    font-weight: 300;
-    color: var(--color)
+    font-family: ui-monospace, "SF Mono", "Menlo", "Cascadia Code", monospace;
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 body {
-    background-color: var(--background-color-light);
-    color: var(--text-color-light);
-    transition: background-color 2s ease, color .5s ease;
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--text);
+    text-transform: lowercase;
+    transition:
+        background-color 0.5s ease,
+        color 0.4s ease;
 }
 
-.dark-mode {
-    transition: background-color 2s ease, color .5s ease;
-    background-color: var(--background-color-dark);
-    color: var(--text-color-dark);
+main {
+    max-width: 18rem;
+    padding: var(--margin);
 }
 
-a {
-    text-decoration: none;
-    color: #1565c0;
-}
-
-i:hover {
-    color: #217ee7;
+header {
+    margin-bottom: 2.5rem;
 }
 
 h1 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 0.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.02em;
 }
 
-p {
-    font-size: .75rem;
-    letter-spacing: 0.15rem;
+header p {
+    margin: 0;
+    color: var(--muted);
 }
 
-#content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    max-width: 520px;
-    padding: 32px;
-    line-height: 1.6em;
-}
-
-.avatar {
-    border-radius: 50%;
-    width: 150px;
-}
-
-#inner {
-    border-top: thin solid;
-    border-bottom: thin solid;
-    padding: .5rem 2.25rem;
-}
-
-.icons {
-    list-style-type: none;
-    font-size: x-large;
-    padding: 0;
+/* A row is a fixed-width line: label on the left, bracket marker on the right.
+   In a monospace font the markers line up vertically with no manual alignment. */
+.row {
     display: flex;
     justify-content: space-between;
-    width: 50%;
-    max-width: 320px;
-    margin: 1em auto;
-}
-
-.icons li {
-    display: inline;
-    width: 42px;
-}
-
-.icons a {
-    color: inherit
-}
-
-.icons a:hover {
-    color: #1565c0;
-}
-
-#dark-mode-toggle {
-    position: fixed;
-    right: 0rem;
-    margin: .25rem;
-    border: none;
+    width: 100%;
+    padding: 0.15rem 0;
     color: inherit;
-    background-color: inherit;
+    text-decoration: none;
+    /* button reset */
+    border: none;
+    background: none;
+    font: inherit;
+    text-transform: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* The bracket marker is a hover/focus affordance: hidden until the row is
+   interacted with, so the resting state is just a clean column of labels. */
+.row .marker {
+    color: var(--muted);
+    opacity: 0;
+    transition:
+        opacity 0.2s ease,
+        color 0.2s ease;
+}
+
+.row:hover .marker,
+.row:focus-visible .marker {
+    opacity: 1;
+}
+
+.row:hover .label {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.row:hover .marker {
+    color: var(--text);
+}
+
+/* Theme toggle lives in the bottom-left corner, outside the content flow. */
+#theme-toggle {
+    position: fixed;
+    left: var(--margin);
+    bottom: var(--margin);
+    width: auto;
+    gap: 0.5rem;
+    padding: 0;
+    color: var(--muted);
 }

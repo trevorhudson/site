@@ -1,51 +1,73 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>trevor hudson | swe</title>
 
-  <title>trevor hudson | swe</title>
+        <link rel="stylesheet" href="main.css" />
 
-  <link rel="stylesheet" href="main.css" />
+        <script>
+            (() => {
+                var prefersDark = window.matchMedia(
+                    "(prefers-color-scheme: dark)",
+                ).matches;
+                document.documentElement.dataset.theme = prefersDark
+                    ? "dark"
+                    : "light";
+            })();
+        </script>
+    </head>
 
-  <!-- Fonts from Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet" />
+    <body>
+        <main>
+            <header>
+                <h1>trevor hudson</h1>
+                <p>software engineer</p>
+            </header>
 
-  <!-- Load FontAwesome (for icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" />
+            <nav>
+                <a
+                    class="row"
+                    href="https://github.com/trevorhudson"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <span class="label">github</span
+                    ><span class="marker">[&#8599;]</span>
+                </a>
+                <a
+                    class="row"
+                    href="https://www.linkedin.com/in/trevor-hudson-442303138/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <span class="label">linkedin</span
+                    ><span class="marker">[&#8599;]</span>
+                </a>
+                <button
+                    class="row"
+                    id="email-copy"
+                    type="button"
+                    data-email="trevor.c.hudson@gmail.com"
+                >
+                    <span class="label">email</span
+                    ><span class="marker">[+]</span>
+                </button>
+            </nav>
+        </main>
 
-</head>
+        <button
+            class="row"
+            id="theme-toggle"
+            type="button"
+            aria-label="toggle theme"
+        >
+            <span class="label">theme</span
+            ><span class="marker">[&#8618]</span>
+        </button>
 
-<body>
-  <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
-  <section id="content">
-    <div id="inner">
-      <h1>trevor hudson</h1>
-      <p>
-        software engineer
-      </p>
-    </div>
-    <div id="outer">
-      <!-- Icons -->
-      <ul class="icons">
-        <li>
-          <a href="https://github.com/trevorhudson" title="GitHub"><i class="fab fa-github"></i></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/trevor-hudson-442303138/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </li>
-      </ul>
-    </div>
-
-  </section>
-  <script src="darkmode.js"></script>
-</body>
-
+        <script src="main.js"></script>
+    </body>
 </html>
